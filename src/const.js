@@ -1,0 +1,5 @@
+export const SET_CURRENT_USER = "SET_CURRENT_USER"
+export const IS_AUTHENTICATED = "IS_AUTHENTICATED"
+
+//Story Management
+export const GET_ALL_STORIES = "GET_ALL_STORIES"
