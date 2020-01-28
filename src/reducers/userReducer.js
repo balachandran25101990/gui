@@ -1,11 +1,13 @@
 import { isEmpty } from "lodash"
 import { 
   SET_CURRENT_USER,
+  USER_REGISTARTION_SUCCESS
  } from "../const";
 
 const initialState = {
   userId: "",
-  isAuthenticated: false
+  isAuthenticated: false,
+  registerSucess: ""
 };
 
 export default function(state = initialState, action) {
@@ -15,6 +17,12 @@ export default function(state = initialState, action) {
         ...state,
         userId: action.payload,
         isAuthenticated: !isEmpty(action.payload)
+      }
+    }
+    case USER_REGISTARTION_SUCCESS: {
+      return {
+        ...state,
+        registerSucess: action.payload
       }
     }
     default:

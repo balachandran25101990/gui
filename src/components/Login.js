@@ -6,6 +6,7 @@ import FormGroup from "../common/FormGroup"
 import ControlLabel from "../common/ControlLabel"
 import FormControl from "../common/FormControl"
 import { authenticateUser } from "../actions/loginAction"
+import store from "../store"
 class Login extends Component {
     constructor() {
         super()
@@ -35,9 +36,12 @@ class Login extends Component {
     showLoginError = (err) => this.setState({ isLoginError: true, loginError: err })
 
     render() {
+        const isUserRegistered = store.getState().user.registerSucess
+        console.log(store.getState().user.registerSucess)
         return (
             <form>
                 {this.state.isLoginError ? <FormGroup><div className="alert alert-danger">{this.state.loginError}</div></FormGroup> : ""}
+                {isUserRegistered.length > 0 ? <FormGroup><div className="alert alert-success">{isUserRegistered}</div></FormGroup> : ""}
                 <FormGroup>
                     <ControlLabel>Email:</ControlLabel>
                     <FormControl>
