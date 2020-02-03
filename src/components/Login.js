@@ -13,8 +13,16 @@ class Login extends Component {
         this.state = {
             email: "",
             password: "",
-            isLoginError: false
+            isLoginError: false,
+            isRegisterSuccess: ""
         }
+    }
+    componentDidMount(){
+        const isUserRegistered = store.getState().user.registerSucess
+        console.log()
+        this.setState({
+            isRegisterSuccess: isUserRegistered.length > 0 ? isUserRegistered : ""
+        })
     }
     handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,12 +44,10 @@ class Login extends Component {
     showLoginError = (err) => this.setState({ isLoginError: true, loginError: err })
 
     render() {
-        const isUserRegistered = store.getState().user.registerSucess
-        console.log(store.getState().user.registerSucess)
         return (
             <form>
                 {this.state.isLoginError ? <FormGroup><div className="alert alert-danger">{this.state.loginError}</div></FormGroup> : ""}
-                {isUserRegistered.length > 0 ? <FormGroup><div className="alert alert-success">{isUserRegistered}</div></FormGroup> : ""}
+                {this.state.isRegisterSuccess ? <FormGroup><div className="alert alert-success">{this.state.isRegisterSuccess}</div></FormGroup> : ""}
                 <FormGroup>
                     <ControlLabel>Email:</ControlLabel>
                     <FormControl>
