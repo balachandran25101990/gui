@@ -18,7 +18,7 @@ export default class Story extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
     }
-    handleChange(e) {
+    handleChange = (e) => {
         const { name, value } = e.target;
         this.setState({ [name]: value });
     }
@@ -47,10 +47,10 @@ export default class Story extends Component {
     }
     showMessage = (msg) => this.setState({ isError: true, message: msg })
     render() {
-        const alertType = this.state.isError ? "alert-danger" : "alert-success"
+        //const alertType = this.state.isError ? "alert alert-danger" : "alert alert-success"
         return (
             <form>
-                {this.state.isError ? <FormGroup><div className="alert {alertType}">{this.state.message}</div></FormGroup> : ""}
+                {/* {this.state.isError ? <FormGroup><div className={alertType}>{this.state.message}</div></FormGroup> : ""} */}
                 <FormGroup>
                     <ControlLabel>Title</ControlLabel>
                     <FormControl>

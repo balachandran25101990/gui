@@ -12,6 +12,7 @@ const CreateStoryPage = lazy(() => import('./pages/CreateStoryPage'));
 const ManageStoriesPage = lazy(() => import('./pages/ManageStoriesPage'));
 
 export default class App extends Component {
+
   render() {
     return (
       <Router>
