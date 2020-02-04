@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PageLayout from "../common/PageLayout"
 import Story from "../components/Story"
 
-export default class MyStoriesPage extends Component {
+export default class WriteStoryPage extends Component {
     render() {
         return (
             <PageLayout>
@@ -10,7 +10,7 @@ export default class MyStoriesPage extends Component {
                     <div class="main-content">
                         <div class="card">
                             <div class="card-body">
-                                <h4>All Posts</h4>
+                                <h4>Write a New Story</h4>
                                 <div class="m-t-25">
                                     <Story />
                                 </div>

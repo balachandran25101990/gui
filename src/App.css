@@ -16884,7 +16884,7 @@ iframe {
 }
 
 .page-container .main-content {
-	padding: calc(70px + 25px) 25px 25px;
+	padding: 45px 15px 25px;
 	min-height: calc(100vh - 70px)
 }
 
@@ -28514,4 +28514,7 @@ div.is-invalid {
 }
 .pointer {
 	cursor: pointer;
+}
+.no-border {
+	border: none;
 }

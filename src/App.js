@@ -8,6 +8,8 @@ const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const PasswordResetPage = lazy(() => import('./pages/PasswordResetPage'));
 const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const WriteStoryPage = lazy(() => import('./pages/WriteStoryPage'));
+const ManageStoriesPage = lazy(() => import('./pages/ManageStoriesPage'));
 
 export default class App extends Component {
   render() {
@@ -21,6 +23,8 @@ export default class App extends Component {
               <Route exact path="/register" component={RegisterPage} />
               <Route exact path="/reset" component={PasswordResetPage} />
               <ProtectedRoute exact path="/dashboard" component={DashboardPage} />
+              <ProtectedRoute exact path="/createStory" component={WriteStoryPage} />
+              <ProtectedRoute exact path="/manageStory" component={ManageStoriesPage} />
             </Switch>
           </Suspense>
         </div>

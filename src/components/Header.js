@@ -20,19 +20,14 @@ class Header extends Component {
                 <div class="nav-wrap">
                     <ul class="nav-left">
                         <li>
-                            <button onClick={this.handleAllPosts}>
-                                <i class="anticon anticon-user"></i> All Stories
-                                </button>
-                        </li>
-                        <li>
-                            <button onClick={this.handleClick}>
-                                <i class="anticon anticon-user"></i> My Stories
-                                </button>
+                            <button className="btn no-border" onClick={this.handleAllPosts}>
+                                <i class="anticon anticon-home"></i> Home
+                            </button>
                         </li>
                     </ul>
                     <ul class="nav-right">
                         <li>
-                            <button className="btn btn-primary" onClick={this.handleLogout}>
+                            <button className="btn btn-danger" onClick={this.handleLogout}>
                                 <i class="anticon anticon-user"></i> Logout
                                 </button>
                         </li>
