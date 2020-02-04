@@ -10,7 +10,7 @@ export default class DashboardPage extends Component {
                     <div class="main-content">
                         <div class="card">
                             <div class="card-body">
-                                <h4>Recent Stories</h4>
+                                <h4 className="page-header">Recent Stories</h4>
                                 <div class="m-t-25">
                                     <Story />
                                 </div>

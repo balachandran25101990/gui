@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { withRouter } from "react-router-dom"
 import FormGroup from "../common/FormGroup"
 import ControlLabel from "../common/ControlLabel"
 import FormControl from "../common/FormControl"
@@ -6,7 +7,7 @@ import config from "../config"
 import axios from "axios"
 import { getToken, getUserId } from "../utils"
 
-export default class Story extends Component {
+class CreateStory extends Component {
 
     constructor(props) {
         super(props)
@@ -37,7 +38,7 @@ export default class Story extends Component {
                     title: "",
                     body: ""
                 }
-                this.showMessage("Story Saved")
+                this.props.history.push('/dashboard')
             })
             .catch(err => {
                 if (err.response) {
@@ -47,10 +48,8 @@ export default class Story extends Component {
     }
     showMessage = (msg) => this.setState({ isError: true, message: msg })
     render() {
-        //const alertType = this.state.isError ? "alert alert-danger" : "alert alert-success"
         return (
             <form>
-                {/* {this.state.isError ? <FormGroup><div className={alertType}>{this.state.message}</div></FormGroup> : ""} */}
                 <FormGroup>
                     <ControlLabel>Title</ControlLabel>
                     <FormControl>
@@ -72,3 +71,5 @@ export default class Story extends Component {
         )
     }
 }
+
+export default (withRouter(CreateStory))

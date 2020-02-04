@@ -14,7 +14,7 @@ class Menu extends Component {
                     <ul class="side-nav-menu scrollable ps-container ps-theme-default" data-ps-id="33b6cbff-673d-d5a1-fdb6-d72f1c5de93c">
                         <MenuItem title="Dashboard" onClick={() => this.handleMenuRoute('/dashboard')} />
                         <MenuItem title="Create Story" onClick={() => this.handleMenuRoute('/createStory')} />
-                        <MenuItem title="Manage Story" onClick={() => this.handleMenuRoute('/manageStory')} />
+                        <MenuItem title="My Stories" onClick={() => this.handleMenuRoute('/manageStory')} />
                     </ul>
                 </div>
             </div>

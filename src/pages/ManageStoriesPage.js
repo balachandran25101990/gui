@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PageLayout from "../common/PageLayout"
-import Story from "../components/Story"
+import ManageStory from "../components/ManageStory"
 
 export default class ManageStoriesPage extends Component {
     render() {
@@ -12,7 +12,7 @@ export default class ManageStoriesPage extends Component {
                             <div class="card-body">
                                 <h4>Manage Story</h4>
                                 <div class="m-t-25">
-                                    <Story />
+                                    <ManageStory />
                                 </div>
                             </div>
                         </div>
