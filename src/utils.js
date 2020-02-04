@@ -24,13 +24,17 @@ export const auth = (next) => {
             logout()
             return false
         }
-  };
+  }
 
 export const getToken = () => {
     const token = localStorage.getItem("jwtToken")
     if(token){
         return token
     }
+}
+export const getUserId = () => {
+    const token = getToken()
+    return jwt.decode(token)._id
 }
 
 export const logout = () => localStorage.clear()

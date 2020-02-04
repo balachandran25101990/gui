@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PageLayout from "../common/PageLayout"
-import Story from "../components/Story"
+import CreateStory from "../components/CreateStory"
 
 export default class WriteStoryPage extends Component {
     render() {
@@ -12,7 +12,7 @@ export default class WriteStoryPage extends Component {
                             <div class="card-body">
                                 <h4>Write a New Story</h4>
                                 <div class="m-t-25">
-                                    <Story />
+                                    <CreateStory />
                                 </div>
                             </div>
                         </div>

@@ -28510,11 +28510,17 @@ div.is-invalid {
   color: blue
 }
 .no-pad {
-	padding: 0px;
+	padding: 0px !important;
 }
 .pointer {
 	cursor: pointer;
 }
 .no-border {
 	border: none;
+}
+/*Story
+******/
+.story-body {
+	padding-left: 10px !important;
+	min-height: 20vh;
 }
