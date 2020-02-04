@@ -32,9 +32,9 @@ class Header extends Component {
                     </ul>
                     <ul class="nav-right">
                         <li>
-                            <a className="pointer" onClick={this.handleLogout}>
+                            <button className="btn btn-primary" onClick={this.handleLogout}>
                                 <i class="anticon anticon-user"></i> Logout
-                                </a>
+                                </button>
                         </li>
                     </ul>
                 </div>

@@ -10,16 +10,21 @@ export const setAuthorization = (token) => {
     }
 }
 
-export const auth = () => {
-    const token = localStorage.getItem("jwtToken")
-    if(token) {
-        if(jwt.verify(token, 'pass'))
-        return true
-    }
-    else {
-        return false
-    }
-}
+export const auth = (next) => {
+    const token = localStorage.getItem("user")
+    try{
+        if (token && jwt.verify(token, 'pass') && jwt.decode(token).exp < Date.now() / 1000) {
+            localStorage.clear();
+            return false
+          }
+          else {
+              return true
+          }
+        } catch {
+            logout()
+            return false
+        }
+  };
 
 export const getToken = () => {
     const token = localStorage.getItem("jwtToken")
@@ -28,5 +33,5 @@ export const getToken = () => {
     }
 }
 
-export const logout = () => localStorage.removeItem('jwtToken');
+export const logout = () => localStorage.clear()
 

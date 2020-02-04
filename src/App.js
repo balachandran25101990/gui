@@ -3,7 +3,6 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { ProtectedRoute } from "./common/ProtectedRoute"
-import { setAuthorization } from "./utils"
 
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));

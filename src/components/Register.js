@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import config from "../config"
-import { getToken } from "../utils"
 import axios from "axios"
 import store from "../store"
 import FormGroup from "../common/FormGroup"
