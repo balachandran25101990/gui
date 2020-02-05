@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import config from "../config"
-import { getToken, getUserId } from "../utils"
+import { getToken } from "../utils"
 import axios from "axios"
 
 export default class ManageStory extends Component {

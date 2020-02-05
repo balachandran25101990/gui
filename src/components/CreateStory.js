@@ -5,7 +5,7 @@ import ControlLabel from "../common/ControlLabel"
 import FormControl from "../common/FormControl"
 import config from "../config"
 import axios from "axios"
-import { getToken, getUserId } from "../utils"
+import { getToken } from "../utils"
 
 class CreateStory extends Component {
 
