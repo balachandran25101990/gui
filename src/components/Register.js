@@ -98,7 +98,7 @@ export default class Login extends Component {
                 <FormGroup>
                     <ControlLabel>Re-type Password</ControlLabel>
                     <FormControl>
-                        <input type="password" class="form-control" placeholder="Email" name="retypePassword" onChange={this.handleChange} value={this.state.retypePassword} />
+                        <input type="password" class="form-control" placeholder="Re-type Password" name="retypePassword" onChange={this.handleChange} value={this.state.retypePassword} />
                     </FormControl>
                 </FormGroup>
                 <FormGroup>
