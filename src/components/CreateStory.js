@@ -27,7 +27,6 @@ class CreateStory extends Component {
         e.preventDefault()
         const token = getToken()
         const storyData = {
-            userId: getUserId(),
             title: this.state.title,
             storyBody: this.state.body
         }

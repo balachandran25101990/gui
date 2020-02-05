@@ -10,28 +10,6 @@ export const setAuthorization = (token) => {
     }
 }
 
-// export const auth = () => {
-//     const token = localStorage.getItem("jwtToken")
-//     console.log(token)
-//         if (token && (jwt.decode(token).exp > Date.now() / 1000)) {
-//             if(jwt.verify(token, 'pass')) {
-//                 console.log("t")
-//                 console.log(jwt.decode(token).exp)
-//                 console.log(Date.now() / 1000)
-//                 return true
-//             }
-//             else {
-//               console.log("fal")
-//               return false
-//             }
-//           }
-//           else {
-//               console.log("falsy")
-//               return false
-//           }
-//   }
-
-
 export const auth = () => {
     const token = localStorage.getItem("jwtToken")
     console.log(token)

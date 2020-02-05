@@ -15,9 +15,8 @@ export default class ManageStory extends Component {
         this.refreshStories()
     }
     refreshStories = () => {
-        const userId = getUserId()
         const token = getToken()
-        axios.post(config.sm + "myStories", { userId }, { headers: { "auth-token": `${token}` } })
+        axios.get(config.sm + "myStories", { headers: { "auth-token": `${token}` } })
             .then(res => {
                 this.setState({ stories: res.data.stories })
             })
@@ -26,12 +25,10 @@ export default class ManageStory extends Component {
             })
     }
     handleDelete = (storyId) => {
-
-        const userId = getUserId()
+        
         const token = getToken()
         const deleteData = {
-            storyId: storyId,
-            userId: userId
+            storyId: storyId
         }
         axios.post(config.sm + "deleteStory", deleteData, { headers: { "auth-token": `${token}` } })
             .then(res => {
