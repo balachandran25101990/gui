@@ -104,7 +104,7 @@ export default class Login extends Component {
                 <FormGroup>
                     <div class="d-flex align-items-center justify-content-between">
                         <button class="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
-                        <button class="btn btn-primary" onClick={this.handleRegister}>Sign In</button>
+                        <button class="btn btn-primary" onClick={this.handleRegister}>Sign Up</button>
                     </div>
                 </FormGroup>
             </form>
