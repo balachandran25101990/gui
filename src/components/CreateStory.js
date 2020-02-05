@@ -42,6 +42,7 @@ class CreateStory extends Component {
             .catch(err => {
                 if (err.response) {
                     this.showMessage(err.response.data.message)
+                    console.log(err.response.data.message)
                 }
             })
     }
@@ -49,6 +50,7 @@ class CreateStory extends Component {
     render() {
         return (
             <form>
+                {this.state.isError ? <FormGroup><div className="alert alert-danger">{this.state.message}</div></FormGroup> : ""}
                 <FormGroup>
                     <ControlLabel>Title</ControlLabel>
                     <FormControl>
