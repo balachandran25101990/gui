@@ -12,7 +12,6 @@ export const setAuthorization = (token) => {
 
 export const auth = () => {
     const token = localStorage.getItem("jwtToken")
-    console.log(token)
     if (token) {
         if((jwt.decode(token).exp > Date.now() / 1000) && jwt.verify(token, 'pass')){
             return true

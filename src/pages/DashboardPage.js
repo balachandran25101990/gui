@@ -6,12 +6,12 @@ export default class DashboardPage extends Component {
     render() {
         return (
             <PageLayout>
-                <div class="page-container no-pad">
-                    <div class="main-content">
-                        <div class="card">
-                            <div class="card-body">
+                <div className="page-container no-pad">
+                    <div className="main-content">
+                        <div className="card">
+                            <div className="card-body">
                                 <h4 className="page-header">Recent Stories</h4>
-                                <div class="m-t-25">
+                                <div className="m-t-25">
                                     <StoryContainer />
                                 </div>
                             </div>

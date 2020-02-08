@@ -1,62 +1,41 @@
 import React, { Component } from "react"
-import config from "../config"
-import { getToken } from "../utils"
-import axios from "axios"
+import { deleteStory } from "../actions/storyAction"
+import store from "../store"
 
 export default class ManageStory extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            stories: [],
-        }
-    }
     componentDidMount() {
-        this.refreshStories()
+        this.props.getMyStories()
     }
-    refreshStories = () => {
-        const token = getToken()
-        axios.get(config.sm + "myStories", { headers: { "auth-token": `${token}` } })
-            .then(res => {
-                this.setState({ stories: res.data.stories })
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-    handleDelete = (storyId) => {
-        
-        const token = getToken()
-        const deleteData = {
-            storyId: storyId
-        }
-        axios.post(config.sm + "deleteStory", deleteData, { headers: { "auth-token": `${token}` } })
-            .then(res => {
-                this.refreshStories()
-            })
-            .catch(err => {
-                console.log(err)
-            })
+    handleDelete = async (storyId) => {
+        await store.dispatch(deleteStory(storyId))
+        this.props.getMyStories()
     }
     render() {
+        let rowId = 1
         return (
             <table className="table">
                 <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Story</th>
-                        <th>Actions</th>
+                    <tr key="header">
+                        <th key="title">Title</th>
+                        <th key="story">Story</th>
+                        <th key="date">Created On</th>
+                        <th key="actions">Actions</th>
                     </tr>
                 </thead>
-                {this.state.stories.map(row =>
-                    <tr key={row._id}>
-                        <td key={row._id}>{row.title}</td>
-                        <td key={row._id}>{row.storyBody}</td>
-                        <td key={row._id}>
-                            <button class="btn btn-danger" onClick={() => this.handleDelete(row._id)}>Delete</button>
-                        </td>
-                    </tr>
-                )}
+                <tbody>
+                    {this.props.isShowDeleteMessage ? (<tr><td>{this.props.deleteMessage}</td></tr>) : null}
+                    {this.props.stories.map(row =>
+                        <tr key={rowId++}>
+                            <td key={row._id + row.title}>{row.title}</td>
+                            <td key={row._id + row.title}>{row.storyBody}</td>
+                            <td key={row._id + row.createdDate}>{row.createdDate}</td>
+                            <td key={row._id}>
+                                <button className="btn btn-danger" onClick={() => this.handleDelete(row._id)}>Delete</button>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
             </table>
         )
     }

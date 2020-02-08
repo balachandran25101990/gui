@@ -1,18 +1,18 @@
 import React, { Component } from "react"
 import PageLayout from "../common/PageLayout"
-import ManageStory from "../components/ManageStory"
+import ManageStoryContainer from "../containers/ManageStoryContainer"
 
 export default class ManageStoriesPage extends Component {
     render() {
         return (
             <PageLayout>
-                <div class="page-container no-pad">
-                    <div class="main-content">
-                        <div class="card">
-                            <div class="card-body">
+                <div className="page-container no-pad">
+                    <div className="main-content">
+                        <div className="card">
+                            <div className="card-body">
                                 <h4>Manage Story</h4>
-                                <div class="m-t-25">
-                                    <ManageStory />
+                                <div className="m-t-25">
+                                    <ManageStoryContainer />
                                 </div>
                             </div>
                         </div>

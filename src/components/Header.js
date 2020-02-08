@@ -16,19 +16,19 @@ class Header extends Component {
     }
     render() {
         return (
-            <div class="header">
-                <div class="nav-wrap">
-                    <ul class="nav-left">
+            <div className="header">
+                <div className="nav-wrap">
+                    <ul className="nav-left">
                         <li>
                             <button className="btn no-border" onClick={this.handleAllPosts}>
-                                <i class="anticon anticon-home"></i> Home
+                                <i className="anticon anticon-home"></i> Home
                             </button>
                         </li>
                     </ul>
-                    <ul class="nav-right">
+                    <ul className="nav-right">
                         <li>
                             <button className="btn btn-danger" onClick={this.handleLogout}>
-                                <i class="anticon anticon-user"></i> Logout
+                                <i className="anticon anticon-user"></i> Logout
                             </button>
                         </li>
                     </ul>

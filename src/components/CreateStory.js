@@ -54,18 +54,18 @@ class CreateStory extends Component {
                 <FormGroup>
                     <ControlLabel>Title</ControlLabel>
                     <FormControl>
-                        <input type="text" class="form-control" name="title" onChange={this.handleChange} value={this.state.title} />
+                        <input type="text" className="form-control" name="title" onChange={this.handleChange} value={this.state.title} />
                     </FormControl>
                 </FormGroup>
                 <FormGroup>
                     <ControlLabel>Story</ControlLabel>
                     <FormControl>
-                        <textarea class="form-control story-body" name="body" onChange={this.handleChange} value={this.state.body} />
+                        <textarea className="form-control story-body" name="body" onChange={this.handleChange} value={this.state.body} />
                     </FormControl>
                 </FormGroup>
                 <FormGroup>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <button class="btn btn-primary" onClick={this.handleCreateStory}>Save</button>
+                    <div className="d-flex align-items-center justify-content-between">
+                        <button className="btn btn-primary" onClick={this.handleCreateStory}>Save</button>
                     </div>
                 </FormGroup>
             </form>
