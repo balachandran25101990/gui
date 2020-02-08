@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PageLayout from "../common/PageLayout"
-import Story from "../components/Story"
+import StoryContainer from "../containers/StoryContainer"
 
 export default class DashboardPage extends Component {
     render() {
@@ -12,7 +12,7 @@ export default class DashboardPage extends Component {
                             <div class="card-body">
                                 <h4 className="page-header">Recent Stories</h4>
                                 <div class="m-t-25">
-                                    <Story />
+                                    <StoryContainer />
                                 </div>
                             </div>
                         </div>

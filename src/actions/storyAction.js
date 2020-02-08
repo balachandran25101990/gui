@@ -1,10 +1,9 @@
 import axios from "axios"
 import config from "../config"
-import store from "../store"
 import { getToken } from "../utils"
 import { GET_ALL_STORIES } from "../const"
 
-export function getStories() {
+export function getAllStories() {
     const api = config.sm+"stories"
     const token = getToken()
     return {

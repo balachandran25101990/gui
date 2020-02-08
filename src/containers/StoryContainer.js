@@ -1,17 +1,19 @@
-import React from "react"
 import { connect } from 'react-redux'
 import Story from "../components/Story"
 import { 
-    getStories,
+    getAllStories,
 } from "../actions/storyAction"
 
-const mapDispatchToProps = {
-        getStories
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getAllStories() {
+            dispatch(getAllStories())
+        }
+    }
 }
 
 const mapStateToProps = (state) => {
     return {
-        userId: state.user.userId,
         stories: state.story.stories
     }
 }

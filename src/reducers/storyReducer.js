@@ -1,5 +1,5 @@
 import {
-    GET_ALL_STORIES,
+  GET_ALL_STORIES_FULFILLED,
  } from "../const";
 
 const initialState = {
@@ -8,10 +8,10 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case GET_ALL_STORIES: {
+    case GET_ALL_STORIES_FULFILLED: {
       return {
         ...state,
-        stories: action.payload.data
+        stories: action.payload.data.stories
       }
     }
     default:
