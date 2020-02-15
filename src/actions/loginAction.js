@@ -1,7 +1,7 @@
 import axios from "axios"
 import jwt from "jsonwebtoken"
 import config from "../config"
-import { setAuthorization } from "../utils"
+import { setAuthorizationHeader } from "../utils"
 import { SET_CURRENT_USER } from "../const"
 
 export function authenticateUser(loginData) {
@@ -10,7 +10,7 @@ export function authenticateUser(loginData) {
                     .then( (res) => {
                         const token = res.data.token
                         localStorage.setItem('jwtToken', token)
-                        setAuthorization(token)
+                        setAuthorizationHeader(token)
                         dispatch(setCurrentUser(jwt.decode(token)))
                     })
     }

@@ -6,9 +6,7 @@ import {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getAllStories() {
-            dispatch(getAllStories())
-        }
+        getAllStories: dispatch(getAllStories())
     }
 }
 

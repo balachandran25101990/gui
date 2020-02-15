@@ -1,13 +1,10 @@
 import React, { Component } from "react"
-import { Link, withRouter } from "react-router-dom"
-import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import PropTypes from 'prop-types';
 import FormGroup from "../common/FormGroup"
 import ControlLabel from "../common/ControlLabel"
 import FormControl from "../common/FormControl"
-import { authenticateUser } from "../actions/loginAction"
-import store from "../store"
-class Login extends Component {
+export default class Login extends Component {
     constructor() {
         super()
         this.state = {
@@ -16,13 +13,6 @@ class Login extends Component {
             isLoginError: false,
             isRegisterSuccess: ""
         }
-    }
-    componentDidMount(){
-        const isUserRegistered = store.getState().user.registerSucess
-        console.log()
-        this.setState({
-            isRegisterSuccess: isUserRegistered.length > 0 ? isUserRegistered : ""
-        })
     }
     handleChange = (e) => {
         const { name, value } = e.target;
@@ -83,5 +73,3 @@ class Login extends Component {
 Login.propTypes = {
     authenticateUser: PropTypes.func.isRequired
 }
-
-export default connect(null, { authenticateUser })(withRouter(Login))

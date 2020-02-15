@@ -1,17 +1,16 @@
-import React from "react"
 import { connect } from 'react-redux'
 import Login from "../components/Login"
-// const Counter = ...
+import { authenticateUser } from "../actions/loginAction"
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
     return {
-        authenticateUser
+        authenticateUser: authenticateUser()
     }
 }
 
-const mapStateToProps = (state /*, ownProps*/) => {
+const mapStateToProps = (state) => {
     return {
-        counter: state.counter
+        isRegistered: state.user.isRegistered
     }
 }
 

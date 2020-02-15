@@ -1,7 +1,7 @@
 import axios from "axios"
 import jwt from "jsonwebtoken"
 
-export const setAuthorization = (token) => {
+export const setAuthorizationHeader = (token) => {
     if(token) {
         axios.defaults.headers.common['auth-token'] = token
     }
